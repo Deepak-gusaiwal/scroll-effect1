@@ -53,15 +53,16 @@
             // here contions are started
             if (by > yc && by < yc2) {
                 console.log('c1 entry');
-                body.style.backgroundColor = 'red';
+                body.style.backgroundImage = ' linear-gradient(red, yellow, green)';
             } else if (by > yc2 && by < yc3) {
                 console.log('c2 entery');
-                body.style.backgroundColor = 'green';
+                body.style.backgroundImage = ' linear-gradient(red, blue, green)';
             } else if (by >= yc3) {
                 console.log('c3 entry');
-                body.style.backgroundColor = 'cyan';
+                body.style.backgroundImage = ' linear-gradient(red, green, pink)';
             } else {
                 console.log(false);
+                  body.style.backgroundImage = 'none';
                 body.style.backgroundColor = 'white';
             }
 
