@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ON Scrol html</title>
+</head>
+<style>
+    .container {
+        /* margin-top: 100px; */
+        height: 400px;
+        width: 100%;
+        border: 2px solid rgb(252, 172, 0);
+    }
+    
+    body {
+        transition: all 1000ms;
+    }
+</style>
+
+<body id='body'>
+    <div class="container" id='c1'>
+        <h1> This is Container 1</h1>
+
+    </div>
+    <div class="container" id='c2'>
+        <h1> This is Container 2</h1>
+    </div>
+    <div class="container" id='c3'>
+        <h1> This is Container 3</h1>
+    </div>
+    <div class="container" id='c4'>
+        <h1> This is Container 4</h1>
+    </div>
+
+    <script>
+        console.log('Hello world');
+        window.addEventListener('scroll', (e) => {
+            // targeting elements/ container
+            let c2 = document.getElementById('c2');
+            let c3 = document.getElementById('c3');
+            let body = document.getElementById('body');
+            let c1 = document.getElementById('c1');
+
+            // defining their  y axis and x axis points
+            let by = window.scrollY;
+            let yc = c1.offsetTop;
+            let yc2 = c2.offsetTop;
+            let yc3 = c3.offsetTop;
+
+            // here contions are started
+            if (by > yc && by < yc2) {
+                console.log('c1 entry');
+                body.style.backgroundColor = 'red';
+            } else if (by > yc2 && by < yc3) {
+                console.log('c2 entery');
+                body.style.backgroundColor = 'green';
+            } else if (by >= yc3) {
+                console.log('c3 entry');
+                body.style.backgroundColor = 'cyan';
+            } else {
+                console.log(false);
+                body.style.backgroundColor = 'white';
+            }
+
+        });
+    </script>
+</body>
+
+</html>
